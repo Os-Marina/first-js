@@ -50,24 +50,27 @@ function printResult(result) {
 }
 
 function computeNumbersWithAction(inp1, inp2, actionSymbol){
-    const num1 = Number(inp1.value)
-    const num2 = Number(inp2.value)
+    const num1 = +inp1.value
+    const num2 = +inp2.value
+    // const num1 = Number(inp1.value)
+    // const num2 = Number(inp2.value)
+    debugger
+    /* тернарный оператор*/
+    const result = actionSymbol == '+' ? num1 + num2 : num1 - num2
+    return result
 
-    /* тернарный оператор
-    return actionSymbol == '+' ? num1 + num2 : num1 - num2
-
-    */
-    if (action == '+'){
-        return num1 + num2
-    } else if (action == '-'){
-        return num1 - num2
-    } else if (action == '*'){
-        return num1 * num2
-    } else if (action == '/'){
-        return num1 / num2
-    } else if (action == '√'){
-        return Math.sqrt(num1)
-    } 
+    
+    // if (action == '+'){
+    //     return num1 + num2
+    // } else if (action == '-'){
+    //     return num1 - num2
+    // } else if (action == '*'){
+    //     return num1 * num2
+    // } else if (action == '/'){
+    //     return num1 / num2
+    // } else if (action == '√'){
+    //     return Math.sqrt(num1)
+    // } 
 
 }
 

@@ -19,6 +19,7 @@ array[0] = 'Hello!'
 console.log(array)
 
 // array[array.length] = 'becon'  - добавление элемента в массив, не рекоммендуется использовать
+[массив].push - функция у массива, которая добавляет новый элемент в конец списка
 */
 // console.log(inputElement.value)
 
@@ -219,10 +220,44 @@ const finded = people.find((p) => p.cats ===6)
 */
 /*Метод findIndex возвращает значение индекса, чем соответсвует переменная 
 
-*/
+
 const finded = people.findIndex(function(person){
     
     return person.cats===6
     
 })
+заменили Елену на 42
 console.log(people.with(finded, 42))
+*/
+ /*Метод filter никогда не затрагивает старый, а выводит новый
+ 
+let sumCats = 0
+const filtered = people.filter(function(p){
+    return p.cats >= 2
+})
+console.log(filtered)
+
+filtered.forEach (function(p) {
+    sumCats += p.cats
+})
+console.log(sumCats)
+
+*/
+/*Функциональное написание кода
+const sumCats = people.filter(p => p.cats >= 2).map(p => p.cats).reduce((acc, p) => acc + p, 0)
+console.log(sumCats)
+фильтрация массива -> трансформация массива -> 
+
+reduce: первым параметром передаем функцию, а вторым некоторе начальное значение(объектом, числом, строчкой, массивом и тд)
+функция принемает в себя два параметра - аккумулятор и объект итерации - acc + p
+
+можно разбить код на следующий вид:
+const byCats = p => p.cats >=2
+const pickCats = (p) => p.cats
+
+*/
+
+const string = 'Привет, как дела?'
+const reversed = string.split('').toReversed().join('!').split('').filter((c) => c!== '!').join('')
+//Если в функции join оставить пустую строчку, то это значит, что он убирает соединитель в виде "запятой"
+console.log(reversed)

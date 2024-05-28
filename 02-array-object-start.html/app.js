@@ -83,6 +83,7 @@ listElement.onclick = function (event) {
     // console.log(event.target.dataset)
     if (event.target.dataset.index) {
         const index = parseInt(event.target.dataset.index)
+        //забирает свойство type
         const type = event.target.dataset.type
 
         if (type === 'toggle') {
